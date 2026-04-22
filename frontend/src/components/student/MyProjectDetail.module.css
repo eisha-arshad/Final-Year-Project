@@ -1,0 +1,68 @@
+/* ====== Container & Title ====== */
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+h2 { font-size: 1.6rem; margin-bottom: 16px; }
+h3 { margin-top: 24px; margin-bottom: 12px; }
+
+/* ====== Project Info Box ====== */
+.projectBox {
+  background: #f9f9f9; border: 1px solid #eee; border-radius: 8px;
+  padding: 16px; margin-bottom: 20px;
+}
+.projectBox p { margin: 6px 0; }
+
+/* ====== Badges ====== */
+.badge { display:inline-block; padding:2px 8px; border-radius:12px; border:1px solid transparent; font-size:0.85rem; }
+.badgeSuccess { background:#f6ffed; border-color:#b7eb8f; color:#389e0d; }
+.badgeInfo { background:#e6f7ff; border-color:#91d5ff; color:#096dd9; }
+.badgeWarn { background:#fff7e6; border:1px solid #ffd591; color:#ad6800; }
+.badgeError{ background:#fff1f0; border:1px solid #ffa39e; color:#a8071a; }
+
+/* ====== Evaluation Card ====== */
+.evalCard{
+  margin-top: 10px; background:#fff; border:1px solid #eee; border-radius:10px; padding:12px;
+}
+.evalRow{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px;
+}
+.evalCol{
+  border:1px solid #f3f3f3; border-radius:8px; padding:10px 12px; background:#fafafa;
+}
+.evalHead{ display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+.evalTitle{ font-weight:600; }
+.evalMeta{ color:#444; margin-bottom:6px; }
+.evalRemarks{ font-size:.92rem; color:#333; background:#fff; border:1px solid #eee; border-radius:6px; padding:8px; }
+.evalFooter{ margin-top:10px; color:#555; }
+
+/* ====== Group Members ====== */
+.groupList { display:flex; flex-wrap:wrap; gap:16px; }
+.memberCard{
+  flex:1 1 260px; background:#fff; border:1px solid #ddd; border-radius:8px; padding:12px;
+}
+.memberCard ul{ padding-left:18px; }
+.memberCard li{ margin:3px 0; }
+
+/* ====== Split Layout ====== */
+.split{ display:flex; flex-wrap:wrap; gap:20px; }
+.panel{
+  flex:1 1 340px; background:#fff; border:1px solid #eee; border-radius:8px; padding:14px;
+}
+
+/* ====== Comments ====== */
+.commentList{ display:flex; flex-direction:column; gap:10px; }
+.commentItem{ background:#fafafa; border:1px solid #eee; border-radius:6px; padding:8px 10px; }
+.commentMeta{ font-size:0.8rem; color:#555; }
+.commentText{ margin-top:4px; font-size:0.9rem; }
+.note{ font-size:0.8rem; color:#888; margin-top:8px; }
+
+/* ====== Meetings ====== */
+.meetingList{ display:flex; flex-direction:column; gap:10px; }
+.meetingItem{ background:#fafafa; border:1px solid #eee; border-radius:6px; padding:8px 10px; }
+.meetingTitle{ font-weight:500; }
+.meetingMeta{ font-size:0.8rem; color:#555; }
+.meetingNotes{ font-size:0.85rem; margin-top:4px; color:#333; }
+
+/* ====== Misc ====== */
+.muted{ color:#888; font-size:0.85rem; }

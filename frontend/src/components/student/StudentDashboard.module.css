@@ -1,0 +1,198 @@
+/* ---- shared base (dashboard + sidebar + main) ---- */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f3f4f6;
+  font-family: 'Segoe UI', sans-serif;
+}
+.sidebar {
+  width: 270px;
+  background: linear-gradient(to bottom, #2563eb, #04285d);
+  color: white;
+  padding: 22px 16px;
+  border-radius: 26px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.main { flex: 1; display: flex; flex-direction: column; padding: 16px 20px; overflow-y: auto; }
+.content { flex: 1; }
+
+/* ---- sidebar top profile area ---- */
+.sidebarTop {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+}
+.bellInSidebar {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.profileCard {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.profileCard img {
+  width: 42px; height: 42px; border-radius: 50%; object-fit: cover;
+}
+.profileMeta { display: flex; flex-direction: column; min-width: 0; }
+.profileName {
+  font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px;
+}
+.profileRole { font-size: 12px; opacity: 0.9; }
+.chev { margin-left: auto; }
+
+/* ---- nav ---- */
+.nav { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-weight: 500;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+:root {
+  --accent: #14b8a6; /* teal */
+}
+
+/* example usage */
+.nav a:hover {
+  border-left: 4px solid var(--accent);
+}
+/* ---- logout ---- */
+.logout {
+  margin-top: auto; background: none; border: 1px solid white; color: white;
+  padding: 10px 14px; border-radius: 8px; cursor: pointer; transition: .2s;
+}
+.logout:hover { background: white; color: #04285d; }
+
+/* ---- dropdown ---- */
+.dropdown {
+  position: absolute; top: 60px; left: 10px; right: 10px;
+  background: #ffffff; color: #1f2937; border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18); overflow: hidden; z-index: 1001;
+}
+.dropdown button {
+  width: 100%; padding: 12px 14px; text-align: left;
+  background: transparent; border: none; cursor: pointer; font-weight: 500;
+}
+.dropdown button:hover { background: #f3f4f6; }
+
+/* ---- logout dialog ---- */
+.dialogOverlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.4);
+  display: flex; align-items: center; justify-content: center; z-index: 2000;
+}
+.dialogBox {
+  background: #fff; padding: 28px; border-radius: 12px; width: 320px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.2); text-align: center;
+}
+.dialogActions { display: flex; justify-content: space-around; gap: 14px; margin-top: 14px; }
+.dialogActions button { padding: 8px 16px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.dialogActions button:first-child { background: #d62828; color: #fff; }
+.dialogActions button:last-child { background: #2563eb; color: #fff; }
+/* ===== HERO SECTION (BLUR + SIDEBAR THEME) ===== */
+.hero {
+  position: relative;
+  height: 100%;
+  min-height: 80vh;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* background image layer */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* animated gradient */
+  background: linear-gradient(
+    -45deg,
+    #04285d,
+    #2563eb,
+    #1e3a8a,
+    #3b82f6
+  );
+
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+
+  filter: blur(10px);
+  transform: scale(1.2);
+  z-index: 0;
+}
+
+/* animation keyframes */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* sidebar-like color overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(4, 40, 93, 0.85),
+    rgba(37, 99, 235, 0.65)
+  ); /* 👈 same sidebar vibe */
+  z-index: 1;
+}
+
+/* content layer */
+.heroOverlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 40px;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.heroOverlay h1 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.heroOverlay p {
+  font-size: 16px;
+  opacity: 0.9;
+  max-width: 500px;
+  margin: 0 auto;
+}

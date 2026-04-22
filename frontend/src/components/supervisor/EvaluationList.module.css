@@ -1,0 +1,145 @@
+/* ========== Layout & Typography ========== */
+.container { padding: 20px; }
+.title { font-size: 1.6rem; font-weight: 600; margin-bottom: 14px; }
+.status {
+  margin-bottom: 12px; padding: 8px 12px; background: #fffbe6;
+  border: 1px solid #ffe58f; border-radius: 8px;
+}
+.loading,.empty { text-align: center; padding: 20px; color: #666; }
+
+/* ========== Table ========== */
+.tableWrap { overflow: auto; background: #fff; border: 1px solid #eee; border-radius: 12px; }
+.table { width: 100%; border-collapse: separate; border-spacing: 0; }
+.table thead th {
+  text-align: left; font-weight: 600; font-size: 0.92rem;
+  padding: 12px 14px; background: #fafafa; border-bottom: 1px solid #eee;
+}
+.table tbody td { padding: 12px 14px; border-bottom: 1px solid #f5f5f5; vertical-align: top; }
+.titleCell { font-weight: 600; }
+.membersCell { max-width: 360px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ========== Inline Buttons ========== */
+.inlineBtns { display: flex; gap: 8px; flex-wrap: wrap; }
+.detailBtn,.subBtn,.evalBtn{
+  padding:6px 10px;border-radius:6px;cursor:pointer;border:1px solid #1890ff;
+  background:#e6f7ff;font-size:0.85rem;color:#096dd9;transition:all .2s ease;
+}
+.detailBtn:hover,.subBtn:hover,.evalBtn:hover{ background:#1890ff;color:#fff;border-color:#1890ff; }
+
+/* ========== Drawer ========== */
+.drawerBackdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.35); display:flex; justify-content:flex-end; z-index:50;
+}
+.drawer{
+  width:min(920px,92vw); height:100%; background:#fff; box-shadow:-8px 0 24px rgba(0,0,0,.12);
+  display:flex; flex-direction:column; animation:slideIn .18s ease-out;
+}
+@keyframes slideIn{ from{ transform:translateX(20px); opacity:.6 } to{ transform:translateX(0); opacity:1 } }
+.drawerHeader{ display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid #f0f0f0; background:#fafafa; }
+.drawerTitle{ font-size:1.1rem; font-weight:600; }
+.closeBtn{ width:36px; height:36px; border-radius:8px; border:1px solid #e8e8e8; background:#fff; cursor:pointer; font-size:18px; line-height:1; }
+.closeBtn:hover{ border-color:#ff4d4f; color:#ff4d4f;}
+.tabBar{ display:flex; gap:8px; padding:10px 12px; border-bottom:1px solid #f0f0f0; background:#fff; }
+.tabBtn{ padding:8px 12px; border-radius:999px; border:1px solid #d9d9d9; background:#fff; color:#555; cursor:pointer; font-size:.88rem; }
+.tabBtnActive{ background:#e6f7ff; border-color:#91d5ff; color:#096dd9; }
+.drawerBody{ padding:16px; overflow:auto; }
+.section{ margin-bottom:20px; }
+.sectionTitle{ font-weight:600; margin-bottom:10px; }
+.kv{ display:grid; gap:6px; margin-bottom:8px; }
+.members{ margin-top:6px; }
+
+/* ========== Submissions (screenshot look) ========== */
+.progressRow{
+  display:flex; align-items:center; justify-content:space-between; margin:12px 0 18px;
+}
+.progressBarBig{
+  flex:1; height:10px; background:#eaf2ff; border-radius:999px; overflow:hidden; margin-right:14px;
+}
+.progressFillBig{
+  height:100%; background:#1890ff; width:0; transition:width .35s ease;
+}
+.pctRing{
+  width:64px; height:64px; border-radius:50%; border:4px solid #1890ff;
+  box-shadow: inset 0 0 0 4px #eaf2ff; display:flex; align-items:center; justify-content:center;
+  color:#1890ff; font-weight:700;
+}
+.pctValue{ font-size:.95rem; }
+
+/* Stepper */
+.stepper{ display:flex; align-items:center; gap:18px; padding:6px 2px 14px; }
+.stepItem{ display:flex; align-items:center; gap:10px; }
+.stepIcon{
+  width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-weight:700; border:2px solid #cbd5e1; color:#64748b; background:#fff;
+}
+.stepDone{ border-color:#52c41a; color:#52c41a; }
+.stepPending{ border-color:#cbd5e1; color:#64748b; }
+.stepLabel{ font-weight:500; color:#2b2b2b; }
+.stepLine{
+  width:46px; height:2px; background:linear-gradient(90deg,#dae3f3 0%, #e9eef9 100%);
+  margin-left:6px; margin-right:6px;
+}
+
+/* Cards grid */
+.cardsGrid{
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px; margin-top:14px;
+}
+@media (max-width: 860px){ .cardsGrid{ grid-template-columns:1fr; } }
+
+.subCard{
+  border:1px solid #eee; border-radius:14px; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.03);
+}
+.subCardHead{
+  display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #f5f5f5;
+}
+.subCardTitle{ font-weight:600; }
+.badgeSubmitted{
+  background:#f0fff0; color:#46b014; border:1px solid #b7efb7;
+  padding:4px 10px; border-radius:999px; font-size:.82rem; font-weight:600;
+}
+.subCardBody{ padding:14px 16px; }
+.meta{ font-size:.95rem; color:#333; display:grid; gap:4px; }
+.metaMuted{ color:#9aa4b2; font-style:italic; }
+
+.actionRow{ margin-top:12px; display:flex; gap:10px; }
+.btnPrimary{
+  padding:8px 12px; border-radius:10px; background:#1890ff; color:#fff; border:1px solid #1890ff; cursor:pointer; font-weight:600;
+}
+.btnPrimary:hover{ filter:brightness(0.95); }
+.btnGhost{
+  padding:8px 12px; border-radius:10px; background:#fff; color:#1890ff; border:1px solid #b5d8ff; cursor:pointer; font-weight:600;
+}
+.btnGhost:hover{ background:#f5fbff; }
+
+/* ========== Evaluation ========== */
+.evalGrid{ display:grid; gap:16px; }
+.evalRow,.evalRowFull{ display:grid; grid-template-columns:220px 1fr; gap:12px; align-items:center; }
+.evalRowFull{ grid-template-columns:1fr; }
+.evalLabel{ font-weight:600; color:#333; }
+.evalInputs{ display:flex; align-items:center; gap:10px; }
+.input,.select,.textarea{
+  padding:8px 10px; border-radius:8px; border:1px solid #d9d9d9; outline:none;
+}
+.input{ width:120px; }
+.select{ width:200px; }
+.textarea{ width:100%; min-height:90px; resize:vertical; }
+.input:focus,.select:focus,.textarea:focus{ border-color:#1890ff; box-shadow:0 0 0 3px rgba(24,144,255,.12); }
+.maxNote{ color:#777; font-size:.85rem; }
+.evalTotal{ margin-top:6px; padding-top:8px; border-top:1px dashed #eee; display:flex; align-items:center; justify-content:space-between; }
+.evalTotalLabel{ font-weight:700; }
+.evalTotalScore{ font-weight:700; color:#096dd9; }
+.evalActions{ margin-top:12px; display:flex; align-items:center; gap:12px; }
+.savedNote{ color:#777; font-size:.9rem; }
+
+/* Buttons / Toasts (global) */
+.primaryBtn{ padding:8px 12px; border-radius:8px; background:#1890ff; color:#fff; border:1px solid #1890ff; cursor:pointer; }
+.primaryBtn:disabled{ opacity:.6; cursor:not-allowed; }
+
+.toast{
+  position:fixed; right:16px; bottom:16px; padding:10px 12px; border-radius:10px; color:#fff; z-index:60;
+  box-shadow:0 8px 24px rgba(0,0,0,.15); font-size:.92rem;
+}
+.toastSuccess{ background:#52c41a; }
+.toastError{ background:#ff4d4f; }
+.toastInfo{ background:#1890ff; }

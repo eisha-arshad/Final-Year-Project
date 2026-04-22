@@ -1,0 +1,112 @@
+/* StudentFileSubmissions.module.css
+
+.wrapper {
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fafafa;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #222;
+  text-align: center;
+}
+
+.noData {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.meta p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+.fileList {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.fileList li {
+  margin-bottom: 8px;
+}
+
+.fileList a {
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.fileList a:hover {
+  color: #1565c0;
+  text-decoration: underline;
+} */
+
+
+/* src/components/SupervisorDashboard/StudentFileSubmission.module.css */
+
+.container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 2rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.studentName {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.fileList {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.fileList li {
+  margin: 0.3rem 0;
+}
+
+.downloadLink {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.downloadLink:hover {
+  text-decoration: underline;
+}

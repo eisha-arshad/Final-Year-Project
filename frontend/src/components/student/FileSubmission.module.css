@@ -1,0 +1,374 @@
+/* .container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.heading {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+.stepProgress {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 50px;
+  padding: 0 10px;
+}
+
+.stepItem {
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.stepCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #fffcfc;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.stepCircle.active {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.stepLabel {
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.stepLine {
+  content: '';
+  height: 4px;
+  width: 100%;
+  background-color: #e0e0e0;
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(0%);
+}
+
+.stepLine.active {
+  background-color: #2563eb;
+}
+
+.stepCard {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px 24px;
+  background-color: #fafafa;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+.stepCard:hover {
+  border-color: #ccc;
+}
+
+.stepTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.downloadLink {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.downloadLink:hover {
+  text-decoration: underline;
+}
+
+.uploadButton {
+  display: inline-block;
+  background-color: #1976d2;
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.uploadButton:hover {
+  background-color: #125ea8;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.statusMsg {
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: #2563eb;
+  transition: width 0.4s ease;
+}
+
+.metaInfo {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #faf8f8;
+} */
+
+.container {
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.status {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: 8px;
+}
+
+/* progress top */
+.progressWrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.progressBar {
+  flex: 1;
+  height: 14px;
+  background: #eaf4ff;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #1890ff;
+}
+
+.progressCircle {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #eaf4ff;
+  display: grid;
+  place-items: center;
+}
+
+.circleInner {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 6px solid #1890ff;
+  display: grid;
+  place-items: center;
+  background: #fff;
+}
+
+.pct {
+  font-weight: 700;
+  color: #1890ff;
+}
+
+/* stepper */
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stepDot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e6f7ff;
+  color: #1890ff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.stepLabel {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.stepLine {
+  width: 42px;
+  height: 2px;
+  background: #cde6ff;
+  margin: 0 8px;
+}
+
+.done .stepDot {
+  background: #f6ffed;
+  color: #389e0d;
+  border: 1px solid #b7eb8f;
+}
+
+.current .stepDot {
+  background: #1890ff;
+  color: #fff;
+}
+
+/* cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cardTitle {
+  font-weight: 600;
+}
+
+
+
+.badgeDone {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #389e0d;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.badgeTodo {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+  color: #096dd9;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.cardBody {
+  padding: 12px 14px;
+}
+
+.meta {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+}
+
+.metaMuted {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.hint {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #888;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.uploadBtn,
+.downloadBtn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: #1890ff;
+  color: #fff;
+}
+
+.uploadBtn {
+  background: #1890ff;
+  border-color: #1890ff;
+}
+
+.uploadBtn.btnDisabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.downloadBtn {
+  background: #fff;
+  color: #1890ff;
+  border: 1px solid #1890ff;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}

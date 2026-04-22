@@ -1,0 +1,126 @@
+/* ========== Layout & Typography ========== */
+.container { padding: 20px; }
+.title { font-size: 1.6rem; font-weight: 600; margin-bottom: 14px; }
+.status {
+  margin-bottom: 12px; padding: 8px 12px; background: #fffbe6;
+  border: 1px solid #ffe58f; border-radius: 8px;
+}
+.loading,.empty { text-align: center; padding: 20px; color: #666; }
+
+/* ========== Table ========== */
+.tableWrap { overflow: auto; background: #fff; border: 1px solid #eee; border-radius: 12px; }
+.table { width: 100%; border-collapse: separate; border-spacing: 0; }
+.table thead th{
+  text-align:left; font-weight:600; font-size:.92rem; padding:12px 14px; background:#fafafa; border-bottom:1px solid #eee;
+}
+.table tbody td{ padding:12px 14px; border-bottom:1px solid #f5f5f5; vertical-align:top; }
+.titleCell{ font-weight:600; }
+.membersCell{ max-width:360px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+/* badges */
+.badge{ display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; border:1px solid transparent; }
+.badgeSuccess{ background:#f6ffed; border-color:#b7eb8f; color:#389e0d; }
+.badgeInfo{ background:#e6f7ff; border-color:#91d5ff; color:#096dd9; }
+
+/* inline action buttons */
+.inlineBtns{ display:flex; gap:8px; flex-wrap:wrap; }
+.detailBtn,.commentBtn,.meetingBtn,.subBtn{
+  padding:6px 10px; border-radius:6px; cursor:pointer; border:1px solid #1890ff;
+  background:#e6f7ff; font-size:.85rem; color:#096dd9; transition:all .2s ease;
+}
+.detailBtn:hover,.commentBtn:hover,.meetingBtn:hover,.subBtn:hover{ background:#1890ff; border-color:#1890ff; color:#fff; }
+
+/* ========== Drawer ========== */
+.drawerBackdrop{ position:fixed; inset:0; background:rgba(0,0,0,.35); display:flex; justify-content:flex-end; z-index:50; }
+.drawer{
+  width:min(920px,92vw); height:100%; background:#fff; box-shadow:-8px 0 24px rgba(0,0,0,.12);
+  display:flex; flex-direction:column; animation:slideIn .18s ease-out;
+}
+@keyframes slideIn{ from{ transform:translateX(20px); opacity:.6 } to{ transform:translateX(0); opacity:1 } }
+.drawerHeader{ display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid #f0f0f0; background:#fafafa; }
+.drawerTitle{ font-size:1.1rem; font-weight:600; }
+.closeBtn{ width:36px; height:36px; border-radius:8px; border:1px solid #e8e8e8; background:#fff; cursor:pointer; font-size:18px; line-height:1; }
+.closeBtn:hover{ border-color:#ff4d4f; color:#ff4d4f; }
+.tabBar{ display:flex; gap:8px; padding:10px 12px; border-bottom:1px solid #f0f0f0; background:#fff; }
+.tabBtn{ padding:8px 12px; border-radius:999px; border:1px solid #d9d9d9; background:#fff; color:#555; cursor:pointer; font-size:.88rem; }
+.tabBtnActive{ background:#e6f7ff; border-color:#91d5ff; color:#096dd9; }
+.drawerBody{ padding:16px; overflow:auto; }
+
+/* ========== Sections ========== */
+.section{ background:#fff; border:1px solid #eee; border-radius:12px; padding:14px; margin-bottom:14px; }
+.sectionTitle{ font-weight:600; margin-bottom:10px; }
+.kv{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:8px; margin-bottom:10px; }
+.members{ margin-top:8px; }
+
+/* quick eval summary */
+.evalSummaryBox{
+  margin-top:8px; padding:10px 12px; background:#fafafa; border:1px solid #eee; border-radius:8px;
+  display:grid; gap:4px;
+}
+
+/* ========== Comments ========== */
+.commentForm{ display:flex; flex-direction:column; gap:8px; margin-bottom:10px; }
+.textarea{
+  width:100%; min-height:90px; resize:vertical; padding:10px 12px; border-radius:8px; border:1px solid #d9d9d9; outline:none;
+}
+.textarea:focus{ border-color:#1890ff; box-shadow:0 0 0 3px rgba(24,144,255,.12); }
+.primaryBtn{ align-self:flex-start; padding:8px 12px; border-radius:8px; background:#1890ff; color:#fff; border:1px solid #1890ff; cursor:pointer; }
+.primaryBtn:disabled{ opacity:.5; cursor:not-allowed; }
+.commentList{ display:flex; flex-direction:column; gap:10px; }
+.muted{ color:#777; }
+.commentItem{ background:#fafafa; border:1px solid #eee; border-radius:10px; padding:10px; }
+.commentMeta{ font-size:.84rem; color:#666; margin-bottom:4px; }
+.commentText{ font-size:.95rem; }
+
+/* ========== Meetings ========== */
+.meetingForm{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; }
+.formRow{ display:flex; flex-direction:column; gap:6px; }
+.input,.textarea{ padding:8px 10px; border-radius:8px; border:1px solid #d9d9d9; outline:none; }
+.input:focus{ border-color:#1890ff; box-shadow:0 0 0 3px rgba(24,144,255,.12); }
+.meetingList{ display:flex; flex-direction:column; gap:10px; }
+.subTitle{ font-weight:600; margin-bottom:6px; }
+.meetingItem{ background:#fafafa; border:1px solid #eee; border-radius:10px; padding:10px; }
+.meetingTitle{ font-weight:600; }
+.meetingMeta{ font-size:.85rem; color:#555; margin-top:2px; }
+.meetingNotes{ margin-top:6px; color:#444; }
+
+/* ========== Submissions (progress + stepper + cards) ========== */
+.progressWrap{ display:flex; align-items:center; gap:16px; margin-bottom:18px; }
+.progressBar{ flex:1; height:14px; background:#eaf4ff; border-radius:999px; overflow:hidden; }
+.progressFill{ height:100%; background:#1890ff; }
+.progressCircle{ width:62px; height:62px; border-radius:50%; background:#eaf4ff; display:grid; place-items:center; }
+.circleInner{ width:52px; height:52px; border-radius:50%; border:6px solid #1890ff; display:grid; place-items:center; background:#fff; }
+.pct{ font-weight:700; color:#1890ff; }
+
+/* stepper */
+.stepper{ display:flex; align-items:center; gap:10px; margin-bottom:16px; flex-wrap:wrap; }
+.step{ position:relative; display:flex; align-items:center; gap:8px; }
+.stepDot{ width:28px; height:28px; border-radius:50%; background:#e6f7ff; color:#1890ff; display:grid; place-items:center; font-weight:700; }
+.stepLabel{ font-size:.9rem; color:#333; }
+.stepLine{ width:42px; height:2px; background:#cde6ff; margin:0 8px; }
+.done .stepDot{ background:#f6ffed; color:#389e0d; border:1px solid #b7eb8f; }
+.current .stepDot{ background:#1890ff; color:#fff; }
+
+/* cards */
+.cards{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; }
+.card{ background:#fff; border:1px solid #eee; border-radius:12px; }
+.cardHead{ display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid #f0f0f0; }
+.cardTitle{ font-weight:600; }
+.badgeDone{ background:#f6ffed; border:1px solid #b7eb8f; color:#389e0d; padding:2px 8px; border-radius:999px; font-size:12px; }
+.badgeTodo{ background:#e6f7ff; border:1px solid #91d5ff; color:#096dd9; padding:2px 8px; border-radius:999px; font-size:12px; }
+.cardBody{ padding:12px 14px; }
+.meta{ display:grid; gap:4px; margin-bottom:10px; font-size:.92rem; }
+.metaMuted{ color:#777; margin-bottom:10px; }
+.subActions{ display:flex; gap:8px; align-items:center; }
+.downloadBtn{
+  padding:6px 10px; border-radius:6px; border:1px solid #1890ff; background:#fff; color:#1890ff; cursor:pointer; font-size:.85rem;
+}
+.viewLink{
+  padding:6px 10px; border-radius:6px; border:1px solid #d9d9d9; background:#fff; color:#595959; text-decoration:none; font-size:.85rem;
+}
+
+/* ========== Toasts ========== */
+.toast{ position:fixed; right:16px; bottom:16px; padding:10px 12px; border-radius:10px; color:#fff; z-index:60; box-shadow:0 8px 24px rgba(0,0,0,.15); font-size:.92rem; }
+.toastSuccess{ background:#52c41a; }
+.toastError{ background:#ff4d4f; }
+.toastInfo{ background:#1890ff; }

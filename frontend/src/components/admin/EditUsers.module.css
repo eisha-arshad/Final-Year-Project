@@ -1,0 +1,56 @@
+.editUserWrap {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.editUserTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.editUserForm { display: flex; flex-direction: column; }
+
+.editInput {
+  margin-bottom: 15px;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.editUserBtns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.editBtnSave,
+.editBtnBack {
+  padding: 10px 18px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.editBtnSave { background-color: #007bff; color: white; }
+.editBtnSave:hover { background-color: #0056b3; }
+
+.editBtnBack { background-color: #6c757d; color: white; }
+.editBtnBack:hover { background-color: #5a6268; }
+
+.editStatus {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #d9534f;
+}
